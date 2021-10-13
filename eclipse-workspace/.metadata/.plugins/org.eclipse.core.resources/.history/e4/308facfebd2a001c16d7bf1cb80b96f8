@@ -1,0 +1,18 @@
+package edu.mtc.egr283;
+
+/**
+ * GameCatalogueDriver - driver class for the Game Catalogue program
+ * @author leboe
+ * @version 1.0.0 10-14-2021
+ */
+public class GameCatalogueDriver {
+
+	/**
+	 * Main method
+	 * @param args - command line arguments
+	 */
+	public static void main(String[] args) {
+		
+	}// Ending bracket of method main
+	
+}// Ending bracket of class GameCatalogueDriver

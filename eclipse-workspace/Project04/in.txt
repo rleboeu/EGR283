@@ -1,0 +1,9 @@
+Yahtzee 10 14 1 6 30 60
+Monopoly 10 14 1 6 30 60
+UncleWiggily 10 14 1 6 30 60
+HelloWorld 10 14 1 6 30 60
+Alphabeticalz 10 14 1 6 30 60
+Gin 10 14 1 6 30 60
+Rummy 10 14 1 6 30 60
+Kombucha 10 14 1 6 30 60
+Zelforth 10 14 1 6 30 60

@@ -1,0 +1,44 @@
+package edu.mtc.egr283;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * GameCatalogueDriver - driver class for the Game Catalogue program
+ * @author leboe
+ * @version 1.0.0 10-14-2021
+ */
+public class GameCatalogueDriver {
+
+	/**
+	 * Main method
+	 * @param args - command line arguments
+	 */
+	public static void main(String[] args) {
+		GameCatalogue gc = new GameCatalogue();
+		File fileIn = new File("in.txt");
+		Scanner scnInput = null;
+		
+		try {
+			scnInput = new Scanner(fileIn);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}// Ending bracket of try/catch
+		
+		Game firstGame = Game.readGame(scnInput);
+		System.out.println("First read game: " + firstGame.toString());
+		
+		gc.addGame(firstGame);
+		gc.readFile(scnInput);
+		
+		System.out.println("Full catalog: ");
+		gc.sortCatalogue();.out.println(gc.toString());
+
+		
+		
+		scnInput.close();
+	}// Ending bracket of method main
+	
+}// Ending bracket of class GameCatalogueDriver

@@ -33,8 +33,13 @@ public class GameCatalogue {
 	
 	// increment indices to accommodate for adding at head
 	private void incrementIndices() {
+		int currentData, newData;
+		
 		for (int i = 0; i < this.index.size(); ++i) {
-			this.index.setData(this.index.getDataAtPosition(i)+1, i);
+			currentData = this.index.getDataAtPosition(i);
+			newData = currentData + 1;
+			
+			this.index.setData(newData, i);
 		}// Ending bracket of for loop
 	}// Ending bracket of method incrementIndices
 	
@@ -80,14 +85,36 @@ public class GameCatalogue {
 	 * @param inFile
 	 */
 	public void readFile(Scanner inFile) {
-		
+		while (inFile.hasNextLine()) {
+			this.addGame(Game.readGame(inFile));
+		}// Ending bracket of while loop
 	}// Ending bracket of method readFile
 	
 	/**
-	 * Sorts catalogue alphabetically
+	 * Sorts catalogue alphabetically (inefficient sort algorithm)
 	 */
 	public void sortCatalogue() {
+		Game currentPayload, nextPayload;
+		int currentIndex, nextIndex;
+		boolean indexDataWasChanged = false;
 		
+		for (int i = 0; i < this.index.size()-1; ++i) {
+			currentIndex = this.index.getDataAtPosition(i);
+			nextIndex = this.index.getDataAtPosition(i+1);
+			
+			currentPayload = this.games.getDataAtPosition(currentIndex);
+			nextPayload = this.games.getDataAtPosition(nextIndex);
+			
+			if (currentPayload.compareTo(nextPayload) > 0) {
+				indexDataWasChanged = true;
+				this.index.setData(nextIndex, i);
+				this.index.setData(currentIndex, i+1);
+			}// Ending bracket of if
+		}// Ending bracket of for loop
+		
+		if (indexDataWasChanged) {
+			this.sortCatalogue();
+		}// Ending bracket of if
 	}// Ending bracket of method sortCatalogue
 	
 	/**
@@ -102,7 +129,7 @@ public class GameCatalogue {
 		for (int i = 0; i < this.index.size(); ++i) {
 			currentIndex = this.index.getDataAtPosition(i);
 			currentData = this.games.getDataAtPosition(currentIndex);
-			sb.append(separator + currentData.toString() + "\n");
+			sb.append(separator + currentData.toString());
 		}// Ending bracket of for loop
 		
 		sb.append(separator);

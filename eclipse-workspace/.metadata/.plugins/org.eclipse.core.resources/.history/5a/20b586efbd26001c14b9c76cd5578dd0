@@ -1,0 +1,10 @@
+package edu.mtc.egr283;
+
+/**
+ * Game class - represents a game in the catalogue
+ * @author leboe
+ * @version 1.0.0	10-14-2021
+ */
+public class Game {
+
+}// Ending bracket of class Game

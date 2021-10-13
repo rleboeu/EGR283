@@ -1,0 +1,65 @@
+package edu.mtc.egr283;
+
+/**
+ * Game class - represents a game in the catalogue
+ * @author leboe
+ * @version 1.0.0	10-14-2021
+ */
+public class Game {
+
+	private String name;
+	private int minAge, maxAge;
+	private int minPlayers, maxPlayers;
+	private int minPlayTime, maxPlayTime;
+	
+	
+	
+	/**
+	 * Accessor for name
+	 * @return name of game
+	 */
+	public String getName() {
+		return name;
+	}// Ending bracket of method getName
+	
+	/**
+	 * Mutator for name
+	 * @param name
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}// Ending bracket of method setName
+
+	public int getMinAge() {
+		return minAge;
+	}
+
+	public void setMinAge(int minAge) {
+		this.minAge = minAge;
+	}
+
+	public int getMaxAge() {
+		return maxAge;
+	}
+
+	public void setMaxAge(int maxAge) {
+		this.maxAge = maxAge;
+	}
+
+	public int getMinPlayers() {
+		return minPlayers;
+	}
+
+	public void setMinPlayers(int minPlayers) {
+		this.minPlayers = minPlayers;
+	}
+
+	public int getMaxPlayers() {
+		return maxPlayers;
+	}
+
+	public void setMaxPlayers(int maxPlayers) {
+		this.maxPlayers = maxPlayers;
+	}
+	
+}// Ending bracket of class Game

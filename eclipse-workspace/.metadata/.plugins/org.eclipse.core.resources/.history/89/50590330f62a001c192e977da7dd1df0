@@ -1,0 +1,24 @@
+package edu.mtc.egr283;
+
+import java.util.Scanner;
+
+/**
+ * GameCatalogueDriver - driver class for the Game Catalogue program
+ * @author leboe
+ * @version 1.0.0 10-14-2021
+ */
+public class GameCatalogueDriver {
+
+	/**
+	 * Main method
+	 * @param args - command line arguments
+	 */
+	public static void main(String[] args) {
+		GameCatalogue gc = new GameCatalogue();
+		Scanner input = new Scanner(System.in);
+		
+		
+		input.close();
+	}// Ending bracket of method main
+	
+}// Ending bracket of class GameCatalogueDriver

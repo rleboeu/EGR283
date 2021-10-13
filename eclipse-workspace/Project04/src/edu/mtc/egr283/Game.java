@@ -16,6 +16,25 @@ public class Game {
 	private int minPlayTime, maxPlayTime;
 	
 	/**
+	 * Reads a single game from a file and returns it
+	 * @param inFile
+	 * @return Game
+	 */
+	public static Game readGame(Scanner inFile) {
+		Game result = new Game();
+		
+		result.setName(inFile.next());
+		result.setMinAge(inFile.nextInt());
+		result.setMaxAge(inFile.nextInt());
+		result.setMinPlayers(inFile.nextInt());
+		result.setMaxPlayers(inFile.nextInt());
+		result.setMinPlayTime(inFile.nextInt());
+		result.setMaxPlayTime(inFile.nextInt());
+		
+		return result;
+	}// Ending bracket of method readGame
+	
+	/**
 	 * Tests equality of calling Game's name to parameter otherName
 	 * @param otherName to compareTo
 	 * @return true if equal, false if not
@@ -24,15 +43,14 @@ public class Game {
 		return this.getName().equals(otherName);
 	}// Ending bracket of method compareName
 	
+	/**
+	 * Compares the calling Game object's name to the parameter Game object's name
+	 * @param otherGame
+	 * @return int
+	 */
 	public int compareTo(Game otherGame) {
-		return 0;
+		return this.getName().compareTo(otherGame.getName());
 	}// Ending bracket of method compareTo
-	
-	public Game readGame(Scanner inFile) {
-		Game result = null;
-		
-		return result;
-	}// Ending bracket of method readGame
 	
 	/**
 	 * Return a String representation of the Game
